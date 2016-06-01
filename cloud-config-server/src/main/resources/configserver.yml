@@ -12,9 +12,9 @@ spring:
         database: mysql
         url: localhost
   datasource:
-    url: jdbc:mysql://10.200.51.252:3309/bbg_dev_member?useUnicode=true&characterEncoding=utf-8
-    username: bbg_dev
-    password: bbg_dev
+    url: jdbc:mysql://10.200.51.252:3306/platform?useUnicode=true&characterEncoding=utf-8
+    username: platform
+    password: platform
     driver-class-name : com.mysql.jdbc.Driver
 
 server:

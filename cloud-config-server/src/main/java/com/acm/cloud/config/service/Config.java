@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Config {
     private Long id;
-    private String name;
+    private String application;
     private String profile;
     private String version;
     private String key;
@@ -23,12 +23,12 @@ public class Config {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getApplication() {
+        return application;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setApplication(String application) {
+        this.application = application;
     }
 
     public String getProfile() {
@@ -105,8 +105,8 @@ public class Config {
 
     @Override
     public String toString() {
-        return "Config [id=" + id + ", name=" + name + ", profile=" + profile + ", version=" + version + ", key=" + key
-                + ", value=" + value + ", defaultValue=" + defaultValue + ", type=" + type + ", remark=" + remark
+        return "Config [id=" + id + ", application=" + application + ", profile=" + profile + ", version=" + version + ", key="
+                + key + ", value=" + value + ", defaultValue=" + defaultValue + ", type=" + type + ", remark=" + remark
                 + ", createTime=" + createTime + ", updateTime=" + updateTime + "]";
     }
 

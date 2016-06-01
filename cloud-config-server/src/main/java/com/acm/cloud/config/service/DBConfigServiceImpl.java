@@ -14,21 +14,21 @@ public class DBConfigServiceImpl implements ConfigService {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public List<Config> searchList(String configName, String profile, String version) {
-        String sql = "select name,profile,version,key,value,default_value,create_time,update_time,remark from config where name= ? and profile= ? and version= ?";
-        return (List<Config>) jdbcTemplate.query(sql, new String[] { configName, profile, version }, new RowMapper<Config>() {
+    public List<Config> searchList(String application, String profile, String version) {
+        String sql = "select application,`profile`,version,`key`,`value`,default_value,create_time,update_time,remark from platform_config where application=? and `profile`=? and version=?";
+        return (List<Config>) jdbcTemplate.query(sql, new Object[] { application, profile, version }, new RowMapper<Config>() {
 
             @Override
             public Config mapRow(ResultSet rs, int rowNum) throws SQLException {
                 Config config = new Config();
-                config.setId(rs.getLong("id"));
+                // config.setId(rs.getLong("id"));
                 config.setCreateTime(rs.getDate("create_time"));
                 config.setDefaultValue(rs.getString("default_value"));
                 config.setKey(rs.getString("key"));
-                config.setName(rs.getString("name"));
+                config.setApplication(rs.getString("application"));
                 config.setProfile(rs.getString("profile"));
                 config.setRemark(rs.getString("remark"));
-                config.setType(rs.getString("type"));
+                // config.setType(rs.getString("type"));
                 config.setUpdateTime(rs.getDate("update_time"));
                 config.setValue(rs.getString("value"));
                 config.setVersion(rs.getString("version"));
