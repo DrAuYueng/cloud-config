@@ -1,0 +1,24 @@
+info:
+  component: Config Server
+spring:
+  application:
+    name: configserver
+  jmx:
+    default_domain: cloud.config.server
+  cloud:
+    config:
+      server:
+        test: hello
+        database: mysql
+        url: localhost
+  datasource:
+    url: jdbc:mysql://10.200.51.252:3309/bbg_dev_member?useUnicode=true&characterEncoding=utf-8
+    username: bbg_dev
+    password: bbg_dev
+    driver-class-name : com.mysql.jdbc.Driver
+
+server:
+  port: 8888
+management:
+  context_path: /admin
+ 
