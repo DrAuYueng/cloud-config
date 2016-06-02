@@ -49,16 +49,8 @@ import com.acm.cloud.config.environment.Environment;
 import com.acm.cloud.config.environment.PropertySource;
 import com.acm.cloud.config.server.encryption.EnvironmentEncryptor;
 
-/**
- * @author Dave Syer
- * @author Spencer Gibb
- * @author Roy Clarkson
- * @author Bartosz Wojtkiewicz
- * @author Rafal Zukowski
- * 
- */
 @RestController
-@RequestMapping("${spring.cloud.config.server.prefix:}")
+@RequestMapping("${cloud.config.server.prefix:}")
 public class EnvironmentController {
 
     private static final String MAP_PREFIX = "map";
@@ -93,6 +85,11 @@ public class EnvironmentController {
 
     @RequestMapping("/{name}/{profiles:.*[^-].*}")
     public Environment defaultLabel(@PathVariable String name, @PathVariable String profiles) {
+        return labelled(name, profiles, this.defaultLabel);
+    }
+
+    @RequestMapping("/{name}/{profiles}")
+    public Environment defaultLabel1(@PathVariable String name, @PathVariable String profiles) {
         return labelled(name, profiles, this.defaultLabel);
     }
 

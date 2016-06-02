@@ -26,10 +26,6 @@ import org.springframework.context.annotation.Import;
 import com.acm.cloud.config.config.ConfigServerMvcConfiguration;
 import com.acm.cloud.config.config.EnvironmentRepositoryConfiguration;
 
-/**
- * @author Dave Syer
- * 
- */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
